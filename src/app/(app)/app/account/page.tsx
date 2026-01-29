@@ -1,5 +1,15 @@
+import ContentBlock from "@/components/content-block";
+import H1 from "@/components/h1";
+
 export default function page() {
   return (
-    <div>page</div>
+    <main>
+      <H1>Your Account</H1>
+
+      <ContentBlock> 
+        <p>Logged in as ...</p>  
+      </ContentBlock>
+
+    </main>
   )
 }
