@@ -7,7 +7,7 @@ export default function page() {
 
       <H1 className="my-8 text-white">Your Account</H1>
 
-        <ContentBlock className="h-[500px]"> 
+        <ContentBlock className="h-[500px] flex justify-center items-center"> 
           <p>Logged in as ...</p>  
         </ContentBlock>
 
