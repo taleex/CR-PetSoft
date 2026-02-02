@@ -4,11 +4,12 @@ import H1 from "@/components/h1";
 export default function page() {
   return (
     <main>
-      <H1>Your Account</H1>
 
-      <ContentBlock> 
-        <p>Logged in as ...</p>  
-      </ContentBlock>
+      <H1 className="my-8 text-white">Your Account</H1>
+
+        <ContentBlock className="h-[500px]"> 
+          <p>Logged in as ...</p>  
+        </ContentBlock>
 
     </main>
   )
