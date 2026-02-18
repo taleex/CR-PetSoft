@@ -14,6 +14,7 @@ type PetContextProviderProps = {
 type TPetContext = {
     pets: Pet[];
     selectedPetId: string | null;
+    handleAddPet: (newPet: Pet) => void;
     handleChangeSelectedPetId: (id: string) => void;
     handleCheckoutPet: (id: string) => void;
     selectedPet: Pet | undefined;
@@ -33,7 +34,10 @@ export default function PetContextProvider({children, data}: PetContextProviderP
     const selectedPet = pets.find((pet) => pet.id === selectedPetId);
     const numberOfPets = pets.length;
 
-    // event hgandlers
+    // event handlers
+    const handleAddPet = (newPet: Pet) => {
+        setPets(prev => [...prev, newPet]);
+    }
     const handleCheckoutPet = (id: string) => {
         setPets(prev => prev.filter(pet => pet.id !== id));
         setSelectedPetId(null);
@@ -46,7 +50,7 @@ export default function PetContextProvider({children, data}: PetContextProviderP
 
   return (
     <PetContext.Provider value={{
-        pets, selectedPetId, handleChangeSelectedPetId, handleCheckoutPet, selectedPet, numberOfPets
+        pets, selectedPetId, handleAddPet, handleChangeSelectedPetId, handleCheckoutPet, selectedPet, numberOfPets
     }}>
         {children}
     </PetContext.Provider>
